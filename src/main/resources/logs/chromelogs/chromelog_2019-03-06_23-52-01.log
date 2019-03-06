@@ -1,0 +1,174 @@
+[1551896527.979][INFO]: [ea8602c4a9e71130961e489f7d63ba45] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--test-type", "--disable-popup-blocking" ],
+            "extensions": [  ],
+            "useAutomationExtension": false
+         }
+      } ]
+   },
+   "desiredCapabilities": {
+      "applicationCacheEnabled": false,
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [ "--test-type", "--disable-popup-blocking" ],
+         "extensions": [  ],
+         "useAutomationExtension": false
+      },
+      "javascriptEnabled": true,
+      "platform": "ANY",
+      "version": ""
+   }
+}
+[1551896527.983][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1551896527.990][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1551896527.997][INFO]: Cannot switch to US keyboard layout - some keys may be interpreted incorrectly
+[1551896527.997][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --disable-web-resources --enable-automation --enable-blink-features=ShadowDOMV0 --enable-logging --force-fieldtrials=SiteIsolationExtensions/Control --ignore-certificate-errors --log-level=0 --metrics-recording-only --no-first-run --password-store=basic --remote-debugging-port=0 --test-type --use-mock-keychain --user-data-dir="C:\Users\kumar\AppData\Local\Temp\scoped_dir3912_11177" data:,
+[1551896528.647][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1551896529.664][INFO]: [ea8602c4a9e71130961e489f7d63ba45] RESPONSE InitSession {
+   "acceptInsecureCerts": false,
+   "acceptSslCerts": false,
+   "applicationCacheEnabled": false,
+   "browserConnectionEnabled": false,
+   "browserName": "chrome",
+   "chrome": {
+      "chromedriverVersion": "2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1)",
+      "userDataDir": "C:\\Users\\kumar\\AppData\\Local\\Temp\\scoped_dir3912_11177"
+   },
+   "cssSelectorsEnabled": true,
+   "databaseEnabled": false,
+   "goog:chromeOptions": {
+      "debuggerAddress": "localhost:52124"
+   },
+   "handlesAlerts": true,
+   "hasTouchScreen": false,
+   "javascriptEnabled": true,
+   "locationContextEnabled": true,
+   "mobileEmulationEnabled": false,
+   "nativeEvents": true,
+   "networkConnectionEnabled": false,
+   "pageLoadStrategy": "normal",
+   "platform": "Windows NT",
+   "proxy": {
+
+   },
+   "~~~": "..."
+}
+[1551896548.554][INFO]: [ea8602c4a9e71130961e489f7d63ba45] COMMAND SetTimeouts {
+   "ms": 45000,
+   "type": "implicit"
+}
+[1551896548.554][INFO]: [ea8602c4a9e71130961e489f7d63ba45] RESPONSE SetTimeouts
+[1551896549.655][INFO]: [ea8602c4a9e71130961e489f7d63ba45] COMMAND SetTimeouts {
+   "ms": 45000,
+   "type": "page load"
+}
+[1551896549.655][INFO]: [ea8602c4a9e71130961e489f7d63ba45] RESPONSE SetTimeouts
+[1551896551.693][INFO]: [ea8602c4a9e71130961e489f7d63ba45] COMMAND MaximizeWindow {
+   "handle": "current",
+   "windowHandle": "current"
+}
+[1551896551.693][INFO]: Waiting for pending navigations...
+[1551896551.711][INFO]: Done waiting for pending navigations. Status: ok
+[1551896551.713][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1551896552.857][INFO]: Waiting for pending navigations...
+[1551896552.858][INFO]: Done waiting for pending navigations. Status: ok
+[1551896552.858][INFO]: [ea8602c4a9e71130961e489f7d63ba45] RESPONSE MaximizeWindow {
+   "height": 744,
+   "width": 1382,
+   "x": -8,
+   "y": -8
+}
+[1551896577.502][INFO]: [ea8602c4a9e71130961e489f7d63ba45] COMMAND Navigate {
+   "url": "https://www.google.com"
+}
+[1551896577.502][INFO]: Waiting for pending navigations...
+[1551896577.504][INFO]: Done waiting for pending navigations. Status: ok
+[1551896577.746][INFO]: Waiting for pending navigations...
+[1551896578.389][INFO]: Done waiting for pending navigations. Status: ok
+[1551896578.389][INFO]: [ea8602c4a9e71130961e489f7d63ba45] RESPONSE Navigate
+[1551896578.649][INFO]: [ea8602c4a9e71130961e489f7d63ba45] COMMAND FindElement {
+   "using": "id",
+   "value": "username"
+}
+[1551896578.649][INFO]: Waiting for pending navigations...
+[1551896578.650][INFO]: Done waiting for pending navigations. Status: ok
+[1551896623.657][INFO]: Waiting for pending navigations...
+[1551896623.659][INFO]: Done waiting for pending navigations. Status: ok
+[1551896623.659][INFO]: [ea8602c4a9e71130961e489f7d63ba45] RESPONSE FindElement ERROR no such element: Unable to locate element: {"method":"id","selector":"username"}
+  (Session info: chrome=72.0.3626.119)
+[1551896623.738][INFO]: [ea8602c4a9e71130961e489f7d63ba45] COMMAND GetTitle {
+
+}
+[1551896623.738][INFO]: Waiting for pending navigations...
+[1551896623.739][INFO]: Done waiting for pending navigations. Status: ok
+[1551896623.742][INFO]: Waiting for pending navigations...
+[1551896623.743][INFO]: Done waiting for pending navigations. Status: ok
+[1551896623.743][INFO]: [ea8602c4a9e71130961e489f7d63ba45] RESPONSE GetTitle "Google"
+[1551896623.753][INFO]: [ea8602c4a9e71130961e489f7d63ba45] COMMAND Quit {
+
+}
+[1551896623.810][INFO]: [ea8602c4a9e71130961e489f7d63ba45] RESPONSE Quit
