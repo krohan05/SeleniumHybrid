@@ -90,7 +90,7 @@ public class RiskReportPage extends TestBase {
 //		searchResult.click();
 		jsHelper.clickElement(searchResult);
 		waitHelper.waitForPageComponentLoad();
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 	}
 	
 	public boolean searchRiskFormReport(String formName) {
@@ -125,7 +125,7 @@ public class RiskReportPage extends TestBase {
 
 		searchResultItem.click();
 		waitHelper.waitForPageComponentLoad();
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 		logReport("searched for the Risk Form in reports and opened it");
 	}
 

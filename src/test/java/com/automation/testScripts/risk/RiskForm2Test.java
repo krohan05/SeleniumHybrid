@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.automation.applicationMessages.ApplicationMessages;
 import com.automation.helper.assertion.AssertionHelper;
 import com.automation.helper.dateTime.DateTimeHelper;
 import com.automation.helper.reader.AppConfig;
@@ -77,13 +78,13 @@ public class RiskForm2Test extends TestBase {
 		AssertionHelper.updateTestStatus(riskFormPage.isHeaderLevelDisplayed());
 		logReport("'Level' is displayed at the Header section");
 		String levelValue = riskFormPage.getHeaderLevelValue();
-		//AssertionHelper.verifyText(levelValue, ApplicationMessages.HEADER_LEVEL_VALUE);
+		AssertionHelper.verifyText(levelValue, ApplicationMessages.HEADER_LEVEL_VALUE);
 		logReport("'Level' value is displayed as: " + levelValue);
 
 		AssertionHelper.updateTestStatus(riskFormPage.isHeaderStatusDisplayed());
 		logReport("'Status' is displayed at the Header section");
 		String statusValue = riskFormPage.getHeaderStatusValue();
-		//AssertionHelper.verifyText(statusValue, ApplicationMessages.HEADER_STATUS_VALUE);
+		AssertionHelper.verifyText(statusValue, ApplicationMessages.HEADER_STATUS_VALUE);
 		logReport("'Status' value is displayed as: " + statusValue);
 
 		AssertionHelper.updateTestStatus(riskFormPage.isFullScreenIconDisplayed());
@@ -187,7 +188,7 @@ public class RiskForm2Test extends TestBase {
 
 		// verify Additional details section
 		String formStatus = riskFormPage.getAdditionalDetailFormStatus();
-		//AssertionHelper.verifyText(formStatus, ApplicationMessages.FORM_STATUS);
+		AssertionHelper.verifyText(formStatus, ApplicationMessages.FORM_STATUS);
 		logReport("'Status' of the form in Additional Details section is displayed as: " + formStatus);
 
 		AssertionHelper.verifyText(riskFormPage.getCreatedOnDate(),
@@ -231,7 +232,7 @@ public class RiskForm2Test extends TestBase {
 
 		// Send the Risk Form for Approval
 		String formSubmitStatus = riskFormPage.sendForApproval("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("sent the form for approval");
 
 		homePage.SignOut();
@@ -256,7 +257,7 @@ public class RiskForm2Test extends TestBase {
 
 		// Cancel the Risk Form
 		String cancelSubmissionStatus = riskFormPage.cancelRiskForm("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(cancelSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(cancelSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 
 		// verify that cancelled Risk form should not appear in the Reports
 		logReport(
@@ -340,11 +341,11 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risks");
 		RiskReportPage riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");		
+		waitHelper.waitForExactTitle(driver, "Risk");		
 //		captureScreen();		
 		riskFormPage.editApprovedRiskForm("Risk_DataSet003");
 		String formSubmissionStatus = riskFormPage.sendForApproval("Risk_DataSet003");
-		//AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("Reinitiate the form and sent for approval");
 		homePage.SignOut();
 
@@ -362,7 +363,7 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risk");
 		logReport("searched the RiskForm reinitiated by Business Admin and opened it");
 		String clarificationSubmitStatus = riskFormPage.requestClarification("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		homePage.SignOut();
 
 		// Login back to Application as BA to provide response on the requested
@@ -378,7 +379,7 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risk");
 		logReport("searched the reinitiated RiskForm on which Risk Owner has asked for clarification");
 		String responseSubmitStatus = riskFormPage.provideClarification("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(responseSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(responseSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		homePage.SignOut();
 
 		// Login back as RiskOwner to approve the re-initiated risk form by BA
@@ -395,7 +396,7 @@ public class RiskForm2Test extends TestBase {
 				"searched the reinitiated RiskForm (on which Business Admin has provided clarification) to approve it");
 
 		String finalSubmissionStatus = riskFormPage.approveRiskForm("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(finalSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(finalSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("Risk Form approved and submitted sucessfully");
 
 		// verify if approved re-initiated Risk form contains the updated
@@ -414,7 +415,7 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risks");
 		riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 
 		AssertionHelper.verifyText(riskReportPage.getTaxonomyDescription(),
 				ReadData.fromExcel.getFormData("Risk_DataSet003", "ORTaxonomyDescription"));
@@ -482,11 +483,11 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risks");
 		riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");		
+		waitHelper.waitForExactTitle(driver, "Risk");		
 //		captureScreen();		
 		riskFormPage.editApprovedRiskForm("Risk_DataSet003");
 		String formSubmissionStatus = riskFormPage.sendForApproval("Risk_DataSet003");
-		//AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("Reinitiate the form and sent for approval");
 		homePage.SignOut();
 
@@ -504,7 +505,7 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risk");
 		logReport("searched the RiskForm reinitiated by Business Admin and opened it");
 		String clarificationSubmitStatus = riskFormPage.requestClarification("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		homePage.SignOut();
 
 		// Login back to Application as BA to provide response on the requested
@@ -520,7 +521,7 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risk");
 		logReport("searched the reinitiated RiskForm on which Risk Owner has asked for clarification");
 		String responseSubmitStatus = riskFormPage.provideClarification("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(responseSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(responseSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		homePage.SignOut();
 
 		// Login back as RiskOwner to Cancel the re-initiated risk form by BA
@@ -537,7 +538,7 @@ public class RiskForm2Test extends TestBase {
 				"searched the reinitiated RiskForm (on which Business Admin has provided clarification) to cancel it");
 
 		String cancelSubmissionStatus = riskFormPage.cancelRiskForm("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(cancelSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(cancelSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("reinitiated Risk Form cancelled");
 
 		// verify if cancelled re-initiated Risk form does not contains the
@@ -555,7 +556,7 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risks");
 		riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 
 		AssertionHelper.verifyNotEqualText(riskReportPage.getTaxonomyDescription(),
 				ReadData.fromExcel.getFormData("Risk_DataSet003", "ORTaxonomyDescription"));
@@ -617,7 +618,7 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risks");
 		riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
-		//AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(),	ApplicationMessages.INACTIVE_FORM_HEADER_STATUS);
+		AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(),	ApplicationMessages.INACTIVE_FORM_HEADER_STATUS);
 		logReport("The Form status in the published report is displyed as :  " + riskFormPage.getHeaderStatusValue());
 
 		logReport("!!!!!!!!!! Risk_TC029_FormFlow_InActiveFormByBA ENDS !!!!!!!!!!");
@@ -664,7 +665,7 @@ public class RiskForm2Test extends TestBase {
 		riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
 
-		//AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(),	ApplicationMessages.INACTIVE_FORM_HEADER_STATUS);
+		AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(),	ApplicationMessages.INACTIVE_FORM_HEADER_STATUS);
 		logReport("The Form status in the published report is displyed as :  " + riskFormPage.getHeaderStatusValue());
 
 		logReport("!!!!!!!!!! Risk_TC030_FormFlow_InActiveFormByRO ENDS !!!!!!!!!!");
@@ -707,11 +708,11 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risks");
 		RiskReportPage riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 
 		riskFormPage.editToSetPastDate("Risk_DataSet002");
 		String formSubmissionStatus = riskFormPage.sendForApproval("Risk_DataSet002");
-		//AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("Edited form submitted sucessfully and sent for approval");
 
 		// Go to Report section and open the Risk form to check if the status
@@ -737,7 +738,7 @@ public class RiskForm2Test extends TestBase {
 		riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
 
-		//AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(), ApplicationMessages.EXPIRED_FORM_HEADER_STATUS);
+		AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(), ApplicationMessages.EXPIRED_FORM_HEADER_STATUS);
 		logReport("The Form status in the published report is displyed as :  " + riskFormPage.getHeaderStatusValue());
 
 		logReport("!!!!!!!!!! Risk_TC031_FormFlow_EndRiskFormValidityByBA ENDS !!!!!!!!!!");
@@ -781,11 +782,11 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risks");
 		RiskReportPage riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 
 		riskFormPage.editToSetPastDate("Risk_DataSet001");
 		String formSubmissionStatus = riskFormPage.sendForApproval("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("Edited form submitted sucessfully and sent for approval");
 
 		// Go to Report section and open the Risk form to check if the status
@@ -810,7 +811,7 @@ public class RiskForm2Test extends TestBase {
 		action.pause(3000).build().perform();
 		riskReportPage.searchRiskReportAndClick(riskFormName);
 
-		//AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(), ApplicationMessages.EXPIRED_FORM_HEADER_STATUS);
+		AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(), ApplicationMessages.EXPIRED_FORM_HEADER_STATUS);
 		logReport("The Form status in the published report is displyed as :  " + riskFormPage.getHeaderStatusValue());
 
 		logReport("!!!!!!!!!! Risk_TC032_FormFlow_EndRiskFormValidityByRO ENDS !!!!!!!!!!");
@@ -854,14 +855,14 @@ public class RiskForm2Test extends TestBase {
 		waitHelper.waitForTitle(driver, "Risks");
 		RiskReportPage riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 
 		logReport("Before editing - The status of the Form in the published report is displyed as :  "
 				+ riskFormPage.getHeaderStatusValue());
 		logReport("Now editing the form to make it active");
 		riskFormPage.editToReactivateForm();
 		String formSubmissionStatus = riskFormPage.sendForApproval("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("Edited form submitted sucessfully and sent for approval");
 
 		// Go to Report section and open the Risk form to check if the status
@@ -886,7 +887,7 @@ public class RiskForm2Test extends TestBase {
 		//action.pause(3000).build().perform();
 		riskReportPage.searchRiskReportAndClick(riskFormName);
 
-		//AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(), ApplicationMessages.ACTIVE_FORM_HEADER_STATUS);
+		AssertionHelper.verifyText(riskFormPage.getHeaderStatusValue(), ApplicationMessages.ACTIVE_FORM_HEADER_STATUS);
 		logReport("The Form status in the published report is displyed as :  " + riskFormPage.getHeaderStatusValue());
 
 		logReport("!!!!!!!!!! Risk_TC033_FormFlow_ReActivateExpiredFormByBA ENDS !!!!!!!!!!");
@@ -1027,7 +1028,7 @@ public class RiskForm2Test extends TestBase {
 		riskReportPage = new RiskReportPage(driver);
 //		captureScreen();	
 		riskReportPage.searchRiskReportAndClick("RISKAuto");
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 		logReport("Check for the edit button in Header section of the Form");
 		boolean displayStatus = riskReportPage.isEditButtonDisplayed();
 

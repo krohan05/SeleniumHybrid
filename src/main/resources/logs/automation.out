@@ -1,0 +1,7 @@
+2019-03-07 23:03:93 INFO  WaitHelper:164 - page is loaded
+2019-03-07 23:03:09 INFO  ExcelReader:84 - Exception in reading excel file: null
+2019-03-07 23:03:329 INFO  WaitHelper:164 - page is loaded
+2019-03-07 23:03:126 INFO  TestBase:181 - !!!!!!!!!! Risk_TC004_CloseFormValidation starts !!!!!!!!!!
+2019-03-07 23:03:127 INFO  TestBase:181 - Test Description: Verify the Close form - 'Cancel', 'Don'tSave' and 'Save' functionality
+2019-03-07 23:03:167 INFO  ExcelReader:185 - Exception in reading excel column: null
+2019-03-07 23:03:198 INFO  ExcelReader:185 - Exception in reading excel column: null

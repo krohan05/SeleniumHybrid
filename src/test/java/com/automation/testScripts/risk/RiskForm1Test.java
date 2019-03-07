@@ -6,6 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.automation.applicationMessages.ApplicationMessages;
 import com.automation.helper.assertion.AssertionHelper;
 import com.automation.helper.reader.AppConfig;
 import com.automation.helper.wait.WaitHelper;
@@ -60,7 +61,7 @@ public class RiskForm1Test extends TestBase {
 		logReport("Clicked on Close Form button");
 
 		String closeFormPopupText = riskFormPage.getCloseFormPopupText();
-		//AssertionHelper.verifyText(closeFormPopupText, ApplicationMessages.FORM_CLOSE_POPUP);
+		AssertionHelper.verifyText(closeFormPopupText, ApplicationMessages.FORM_CLOSE_POPUP);
 
 		// CloseForm- Cancel Validation
 		riskFormPage.closeFormCancel();
@@ -91,7 +92,7 @@ public class RiskForm1Test extends TestBase {
 		String formSavedText = riskFormPage.saveForm();
 		logReport("Clicked Save button button to Save the form");
 
-		//AssertionHelper.verifyText(formSavedText, ApplicationMessages.FORM_SAVED_CONFIRM);
+		AssertionHelper.verifyText(formSavedText, ApplicationMessages.FORM_SAVED_CONFIRM);
 		logReport("Form was saved sucessfully");
 
 		logReport("!!!!!!!!!! Risk_TC004_CloseFormValidation ends !!!!!!!!!!");
@@ -129,7 +130,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Send the Form for Approval
 		String fromSubmitStatus = riskFormPage.sendForApproval("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(fromSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(fromSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 
 		logReport("!!!!!!!!!! Risk_TC004_RiskFormInitiationByBussAdmin ends !!!!!!!!!!");
 
@@ -166,7 +167,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Send the Form for Approval
 		String formSubmitStatus = riskFormPage.sendForApproval("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 
 		logReport("!!!!!!!!!! Risk_TC005_RiskFormInitiationByLibraryOwner ends !!!!!!!!!!");
 
@@ -202,7 +203,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Send the Risk Form for Approval
 		String formSubmitStatus = riskFormPage.sendForApproval("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("sent the form for approval");
 
 		homePage.SignOut();
@@ -227,7 +228,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Request for clarification
 		String clarificationSubmitStatus = riskFormPage.requestClarification("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 
 		logReport("!!!!!!!!!! Risk_TC006_RiskFormClarificationReqByLibOwner ends !!!!!!!!!!");
 
@@ -264,7 +265,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Send the Risk Form for Approval
 		String formSubmitStatus = riskFormPage.sendForApproval("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("sent the form for approval");
 
 		homePage.SignOut();
@@ -287,7 +288,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Request for clarification
 		String clarificationRequestStatus = riskFormPage.requestClarification("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(clarificationRequestStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(clarificationRequestStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 
 		homePage.SignOut();
 		logReport("logged out as Risk Owner");
@@ -308,7 +309,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Provide clarification
 		String clarificationSubmitStatus = riskFormPage.provideClarification("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 
 		logReport("!!!!!!!!!! Risk_TC007_RiskFormClarificationProvidedByBA ends !!!!!!!!!!");
 
@@ -343,7 +344,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Send the Risk Form for Approval
 		String formSubmitStatus = riskFormPage.sendForApproval("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("sent the form for approval");
 
 		homePage.SignOut();
@@ -366,7 +367,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Request for clarification
 		String clarificationRequestStatus = riskFormPage.requestClarification("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(clarificationRequestStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(clarificationRequestStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 
 		homePage.SignOut();
 		logReport("logged out as Risk Owner");
@@ -388,7 +389,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Provide clarification
 		String clarificationSubmitStatus = riskFormPage.provideClarification("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(clarificationSubmitStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 
 		homePage.SignOut();
 		logReport("logged out as Business Admin");
@@ -413,7 +414,7 @@ public class RiskForm1Test extends TestBase {
 
 		// Approve the Risk Form
 		String finalSubmissionStatus = riskFormPage.approveRiskForm("Risk_DataSet001");
-		//AssertionHelper.comparePartialText(finalSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(finalSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("Risk Form approved and submitted sucessfully");
 
 		// verify if approved Risk form appears in the Reports
@@ -482,10 +483,10 @@ public class RiskForm1Test extends TestBase {
 		RiskReportPage riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
 
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 		riskFormPage.editApprovedRiskForm("Risk_DataSet003");
 		String formSubmissionStatus = riskFormPage.sendForApproval("Risk_DataSet003");
-		//AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("Edited form submitted sucessfully and sent for approval");
 
 		logReport("!!!!!!!!!! Risk_TC009_ActiveRiskFormUpdateByBA ends !!!!!!!!!!");
@@ -530,10 +531,10 @@ public class RiskForm1Test extends TestBase {
 		RiskReportPage riskReportPage = new RiskReportPage(driver);
 		riskReportPage.searchRiskReportAndClick(riskFormName);
 
-		waitHelper.waitForExactTitle(driver, "Risk - MetricStream M7");
+		waitHelper.waitForExactTitle(driver, "Risk");
 		riskFormPage.editApprovedRiskForm("Risk_DataSet003");
 		String formSubmissionStatus = riskFormPage.sendForApproval("Risk_DataSet003");
-		//AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
+		AssertionHelper.comparePartialText(formSubmissionStatus, ApplicationMessages.FORM_SUBMIT_CONFIRM);
 		logReport("Edited form submitted sucessfully and sent for approval");
 
 		logReport("!!!!!!!!!! Risk_TC010_ActiveRiskFormUpdateByRO ends !!!!!!!!!!");

@@ -6,3 +6,7 @@
 [0306/235922.437:INFO:logging.cc(258)] Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
 [0307/000129.595:INFO:logging.cc(257)] Starting ChromeDriver 2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1)
 [0307/000129.595:INFO:logging.cc(258)] Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[0307/230656.700:INFO:logging.cc(257)] Starting ChromeDriver 2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1)
+[0307/230656.701:INFO:logging.cc(258)] Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[0307/230702.219:INFO:logging.cc(257)] Starting ChromeDriver 2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1)
+[0307/230702.219:INFO:logging.cc(258)] Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.

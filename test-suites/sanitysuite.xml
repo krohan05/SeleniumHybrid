@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression Suite" configfailurepolicy="continue"
+	preserve-order="true" verbose="10">
+	<listeners>
+		<listener class-name="com.automation.utils.listeners.ExtentListener"></listener>
+	</listeners>
+
+	<test name="SanityTests - Chrome">
+		<parameter name="browser" value="Chrome" />
+		<classes>
+			<class name="com.automation.testScripts.commonTestCases.VerifyLandingPg_DiffUsers" />
+			<class name="com.automation.testScripts.risk.RiskForm1Test">
+				<methods>
+					<include name="Risk_TC004_CloseFormValidation" />
+				</methods>
+			</class>
+
+			<!-- <class name="com.automation.testScripts.risk.RiskForm2Test" /> -->
+		</classes>
+	</test>
+
+
+</suite>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RegressionSuite" parallel="true" thread-count="2"
+	preserve-order="true">
+	<listeners>
+		<listener class-name="com.automation.utils.listeners.RetryListener"></listener>
+		<listener class-name="com.automation.utils.listeners.ExtentListener"></listener>
+	</listeners>
+
+	<test name="FoundationTests - Chrome">
+		<parameter name="browser" value="Chrome" />
+		<packages>
+			<package name="com.automation.testScripts.commonTestCases.*" />
+			<package name="com.automation.testScripts.riskPage.*" />
+			<package name="com.automation.testScripts.controlPage.*" />
+			<package name="com.automation.testScripts.IUCPage.*" />
+			<package name="com.automation.testScripts.assetPage.*" />
+			<package name="com.automation.testScripts.vendorPage.*" />
+		</packages>
+	</test>
+	<test name="FoundationTests - Chrome1">
+		<parameter name="browser" value="Chrome" />
+		<packages>
+			<package name="com.automation.testScripts.commonTestCases.*" />
+			<package name="com.automation.testScripts.riskPage.*" />
+			<package name="com.automation.testScripts.controlPage.*" />
+			<package name="com.automation.testScripts.IUCPage.*" />
+			<package name="com.automation.testScripts.assetPage.*" />
+			<package name="com.automation.testScripts.vendorPage.*" />
+		</packages>
+	</test>
+
+
+</suite>
